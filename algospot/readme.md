@@ -111,3 +111,13 @@ https://algospot.com/judge/problem/read/NUMB3RS
 dp로 풀 수 있는 문제이다. 2차원 dp이며, dp[i][j]이면, i번째날에 j번 마을에 두니발이 있을 확률이다.
 dp[i][j]는 i-1날에 j와 인접한 모든 마을에 대하여 그 마을이 k라 하면 dp[i-1][k] / \# of edge of kth
 마을 만큼을 더하면 된다.
+
+#### 22_packing
+https://algospot.com/judge/problem/read/PACKING    
+knapsack 문제에서, 물건을 골랐을때 나타나는 특징을 이용해서 문제를 풀 수 있다. backtrace 함수로
+어떤 물건을 골랐는지를 알아낸다.
+
+#### 24_morse
+https://algospot.com/judge/problem/read/MORSE    
+이항계수로 하위에 몇개까지 더 나타날 수 있는지 확인해서, 맨 앞 녀석의 o부터
+자리를 찾아가면 된다.
