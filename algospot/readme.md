@@ -40,14 +40,13 @@ https://algospot.com/judge/problem/read/QUADTREE
 
 #### 07_fence
 https://algospot.com/judge/problem/read/FENCE    
-<<<<<<< HEAD
+
 책에 나온 알고리즘을 참조하여 구현함. Divide and conquer 방식인데, 같은 문제를 2번 이상 풀지 않으므로 DP의 memoization은 필요가 없다. Brute force시 O(N^2)이 걸리는데 비해, 이 방식은 O(NlgN)이 걸린다.
-=======
 분할정복을 이용하여 O(NlgN)만에 문제를 해결한다. 왼쪽에서만 포함된 경우, 오른쪽에서만 포함된 경우, 양쪽에 걸치는 경우를 따져서 문제를 풀면 되며, 양쪽에 걸치는 경우는 좌우로 확장해나가게 구성하면 된다.
 
 #### 09_jumpgame
 https://algospot.com/judge/problem/read/JUMPGAME    
-다이나믹 프로그래밍으로 풀면 된다. dp[i][j]는 i,j에서 끝점까지 도달가능한지를 여부를 저장하는 dp 메모이다.
+다이나믹 프로그래밍으로 풀면 된다. dp\[i\]\[j\]는 i,j에서 끝점까지 도달가능한지를 여부를 저장하는 dp 메모이다.
 
 #### 10_wildcard
 https://algospot.com/judge/problem/read/WILDCARD    
@@ -78,8 +77,8 @@ https://algospot.com/judge/problem/read/TILING2
 #### 17_tripathcnt
 https://algospot.com/judge/problem/read/TRIPATHCNT    
 삼각형위의 최대 경로만 구하는게 아니라 그 경로의 개수도 새야 한다. dp로 풀 수 있다.    
-이전 까지 위에서 최대경로이여야지 밑에가서도 최대라는 것을 이용할 수 있다. dp[i][j].first는 해당 경로까지
-가는 최대 값이고, dp[i][j].second는 해당 경로를 최대 경로로 가는 가짓수이다.
+이전 까지 위에서 최대경로이여야지 밑에가서도 최대라는 것을 이용할 수 있다. dp\[i\]\[j\].first는 해당 경로까지
+가는 최대 값이고, dp\[i\]\[j\].second는 해당 경로를 최대 경로로 가는 가짓수이다.
 위에서 내려온거랑 오른쪽위에서 내려온게 같은 값이면 경우의수를 더해버리면 된다.
 정답 도출시에는 최대값 훑어서 최대값과 같은녀석들의 경우의 수를 더해버리면 된다.
 
@@ -101,15 +100,15 @@ dp로 일단 대칭과 상관없이 타일링 할 수 있는 경우의 수를 �
 
 #### 20_poly
 https://algospot.com/judge/problem/read/POLY    
-dp로 풀 수 있는 문제이다. 3차원 dp이며 뜻은 dp[i][j][k] -> i층까지 총 j개의 블럭을 놓고, 
+dp로 풀 수 있는 문제이다. 3차원 dp이며 뜻은 dp\[i\]\[j\]\[k\] -> i층까지 총 j개의 블럭을 놓고, 
 최근에 k개의 블럭을 놓을 수 있는 가짓수이다.    
 이전에 j개의 블럭을 놓았으면 다음 줄에 l개의 블럭을 놓는다 했을 때 , 위치를 (j+l-1)가지만큼 할 수 있으므로
 곱해서 더하면 된다.
 
 #### 21_numb3rs
 https://algospot.com/judge/problem/read/NUMB3RS    
-dp로 풀 수 있는 문제이다. 2차원 dp이며, dp[i][j]이면, i번째날에 j번 마을에 두니발이 있을 확률이다.
-dp[i][j]는 i-1날에 j와 인접한 모든 마을에 대하여 그 마을이 k라 하면 dp[i-1][k] / \# of edge of kth
+dp로 풀 수 있는 문제이다. 2차원 dp이며, dp\[i\]\[j\]이면, i번째날에 j번 마을에 두니발이 있을 확률이다.
+dp\[i\]\[j\]는 i-1날에 j와 인접한 모든 마을에 대하여 그 마을이 k라 하면 dp\[i-1\]\[k\] / \# of edge of kth
 마을 만큼을 더하면 된다.
 
 #### 22_packing
@@ -121,3 +120,9 @@ knapsack 문제에서, 물건을 골랐을때 나타나는 특징을 이용해�
 https://algospot.com/judge/problem/read/MORSE    
 이항계수로 하위에 몇개까지 더 나타날 수 있는지 확인해서, 맨 앞 녀석의 o부터
 자리를 찾아가면 된다.
+
+#### 25_klis
+https://algospot.com/judge/problem/read/KLIS    
+dp를 활용한다. bfs에서 정답 개수를 구하는 것 처럼, dp로 정답 만(LIS의 최대 길이)구하는 것이 아닌, 개수도 센다.
+dpCnt\[i\] => i번째 항으로 시작하는 LIS의 개수. 이 LIS의 길이는 dpLEN\[i\]에 저장되어 있다.
+이를 이용해서 K번째 LIS를 항 하나하나 갯수를 세도록 한다.
